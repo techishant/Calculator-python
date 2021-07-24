@@ -7,6 +7,7 @@ infoText = '''
 4). Divide1  (decimal)
 5). Divide2  (quotient and remainder)
 6). Multiplication Table  (multab)
+7). LCM
 0). exit
 ?). ---help for help
 >>  '''
@@ -48,6 +49,23 @@ def mulTab():
         print('>>  ', int(num), ' * ' , i , ' = ', int(num)*i)
         i = i+1
     buffer = input()
+
+def lcm():
+    num1 = float(input('Num1 >>  '))
+    num2 = float(input('Num2 >>  '))
+    if num2<num1:
+        num=int(num1)
+    else:
+        num=int(num2)
+    
+    while(True):
+        if((num % int(num1) == 0) & (num % int(num2) == 0)):
+            ans = input(ansTag + str(num))
+            break
+        else:
+            num = num+1
+
+    
     
 
 # ----------------------------------------------------------------------------
@@ -89,6 +107,8 @@ Nothing's Available Here for Now....
             div2()
         elif(inputDATA == '6'or inputDATA == 'MULTAB' or inputDATA == 'MULTIPLICATIONTABLE' or inputDATA == 'TAB' or inputDATA == 'TABLE'):
             mulTab()
+        elif(inputDATA == '7'or inputDATA == 'LCM'):
+            lcm()
             
         
 main()
