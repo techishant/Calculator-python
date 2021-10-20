@@ -8,6 +8,7 @@ infoText = '''
 5). Divide2  (quotient and remainder)
 6). Multiplication Table  (multab)
 7). LCM
+8). HCF
 0). exit
 ?). ---help for help
 >>  '''
@@ -65,6 +66,40 @@ def lcm():
         else:
             num = num+1
 
+def hcf():
+    nums = input("> ").replace(" ", "")
+    # print(nums)
+    nums = nums.split(',')
+    nums = list(map(int,nums))
+    # print(nums)
+    # nums = [3,24]
+    arr = list()
+    maxnum = list()
+
+    for num in nums:
+        for i in range(8):
+            i += 1
+            if num%i == 0:
+                arr.append(i)
+            else:
+                continue
+            #
+        #
+        # print(f"factor of {num} - {arr}")
+    #
+    # print(arr)
+    for i in arr:
+        if i in maxnum:
+            continue
+        elif arr.count(i) == len(nums):
+            maxnum.append(i)
+            continue
+        else:
+            continue
+        #
+    #
+
+    ans = input(f"{ansTag} {max(maxnum)}")
     
     
 
@@ -78,10 +113,10 @@ def main():
 # <----------------------------- DANGER  ---------------------------------->
         if (inputDATA == 'EXIT' or inputDATA == '0'):
             input(
-'''
-********************
+f'''
+{'*'*30}
 Thanks For using Paculator!!!
-********************
+{'*'*30}
 ''')
             break
         elif (inputDATA == '---HELP' or inputDATA == '?'):
@@ -109,6 +144,8 @@ Nothing's Available Here for Now....
             mulTab()
         elif(inputDATA == '7'or inputDATA == 'LCM'):
             lcm()
+        elif(inputDATA == '8'or inputDATA == 'hcf'):
+            hcf()
             
         
 main()
